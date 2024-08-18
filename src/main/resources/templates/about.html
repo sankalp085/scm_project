@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{base :: parent(~{::#content}, ~{::title}, ~{::script})}">
+  
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>About Page</title>
 </head>
 <body>
-  <h1>This is about page</h1>
-  <!-- Using fragment -->
-<div th:replace="${islogin} ? ~{base :: parent(~{::section})} : ~{base :: test(~{:: #not-loged})}">
-<section class="main-content">
-<h1>This is Logedin</h1>
-</section>
-<section id="second_content">
-<h1>This is Second Content</h1>
-</section>
-<section id="not-loged">
-  <h1>User not Logged in</h1>
-</section>
-</div>
 
+  <div id="content">
+    <h1>Welcome to about page</h1>
+  </div>
+
+
+
+  
+  <script>
+    console.log("about script"); 
+  </script>
 </body>
 </html>
